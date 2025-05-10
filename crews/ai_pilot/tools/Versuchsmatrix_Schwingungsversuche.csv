@@ -1,0 +1,102 @@
+ldf. Nummer,Aufgabe,Art,Was soll erforscht werden?,Startdatum,Enddatum,Umbaumaßnahmen,Vorgehen,Ergebnis
+1,Pumpe mit destilliertem Wasser in Klimakammer 50°C (4000 U/min) betreiben. ,Verschleißbetrachtung,"- mit steigender Temperatur sinken die Schmiereigenschaften von destilliertem Wasser
+- Pumpe sollte schneller verschleißen --> Anpassung Vorgehen künstliche Pumpenalterung
+- maßgebender Indikator für Verschleiß --> Druck- / Volumenstromveränderung",2023-11-01,2023-11-01,"- andere Platine anbringen (auf aktueller ist Sensor klein festgeklebt) und aktuelle Software aufspielen
+- Test-Pumpe 1 einbauen
+-  Beschleunigungssensoren entfernen
+- Aufbau im Ofen vom Prüffeld","- Vorher Kennlinie aufnehmen mit Messung Beschleunigungsdaten
+- mehrere Stunden bei 50°C betreiben Druck und Volumenstrom erfassen 
+- abschließend Kennlinie aufnehmen mit Messung Beschleunigungsdaten",Es ist kein nennenswerter Verschleiß feststellbar der den normalen Verschleiß durch destilliertes Wasser übersteigt.
+2,Auf der Saugseite noch ein Ventil anbringen und Druck unter NPSH Wert (ausgasen) von destilliertem Wasser bringen um Lagerverschleiß zu beschleunigen. Möglicherweise könnten Kavitationen auftreten und Verschleiß beschleunigen ,Verschleißbetrachtung,"- welchen Einfluss hat Kavitation auf die Lebenszeit der Pumpe?
+- kann Kavitation in den Daten erkannt werden?
+- kann Lager- von Zahnverschleiß in den Beschleunigungsdaten unterschieden werden?
+- Leistungsverlust über Ansaugseite besser messbar?",2023-11-01,2023-11-01,"- längere und breitere Platte nutzen da Aufbau auf aktueller nicht passen würde
+- zusätzliches Ventil Saugseite anbringen
+- zusätzlicher Sensor auf der Saugseite anbringen; muss Negativwerte messen können","- Pumpe auf Saugseite auf NPSH-Wert bringen durch Drehfrequenzvariation
+- mehrere Stunden laufen lassen und regelmäßig Volumenstrom, Druck und Beschleunigungsdaten aufzeichnen",Es waren deutliche Kavitationen feststellbar und haben sich als Spikes innerhalb der Beschleunigungsdaten deutlich hervorgehoben. Ein stärkerer Verschleiß war aber nicht feststellbar. Trotzdem wäre es in einer möglichen Steuerung/Regelung der Anlage implementierbar Kavitationen zu detektieren und entsprechende Regelungsanpassungen vorzunehmen oder eine Meldung auszugeben.
+3,Pumpe trocken laufen lassen. ,Verschleißbetrachtung,"- wie schnell verschleißt die Pumpe im trockenen Zustand
+- können wir anhand von Beschleunigungsdaten erkennen ob die Pumpe leerläuft (trocken)
+- Pumpe sollte sehr schnell verschleißen --> Anpassung vorgehen künstliche Pumpenalterung
+- Wo tritt der Verschleiß auf (Welle, Lagerung, etc.?)",2023-11-01,,- nach anfänglicher Kennlinie aufzeichnen Pumpe öffnen und gründlich trocknen,"- Vorher Kennlinie aufnehmen mit Messung Beschleunigungsdaten 
+- 5 (10) Minuten betreiben 
+- abschließend Kennlinie aufnehmen mit Messung Beschleunigungsdaten","- Belastung für Pumpe ist deutlich hörbar zeigt nach 20 Minuten Trockenlauf aber keine nennenswerte Verschlechterung der Performance 
+- Es treten sehr starke Beschleunigungen auf, was auf eine starke Belastung der Pumpe schließen lässt
+- die Beschleunigungsdaten sind sehr rythmisch und könnten auf eine Aufschwingen der Pumpe hindeuten, oder starke Belastungen der Wellen (höchste Ausprägung bei 66 Hz -> Motor/Wellen-Frequenz)
+- Es könnte über die absoluten Beschleunigungswerte ein Trockenlauf der Pumpe erkannt werden"
+4,Arizona Dust ins System bringen und Pumpe verschleißen lassen,Verschleißbetrachtung,"- welchen Einfluss haben Partikelverschmutzung auf den Verschleiß der Pumpe --> Anpassung vorgehen künstliche Alterung?
+- können Verschmutzungen durch Partikel erkannt werden?
+- Wo tritt der Verschleiß auf (Welle, Lager, Zähne)",2024-01-01,,"- neue Pumpe nutzen 
+- sind alle Sensoren nutzbar (Drucksensor) bei Verschmutzung?
+- Schläuche müssen unten im Tank liegen, Dust könnte sich am Boden absetzten und würde ansonsten nicht mehr angesaugt werden","- Reinheitsklasse bestimmen nach ISO-Norm
+- Pumpenkennlinie aufnehmen
+- 1,5g Dust in den Tank geben und laufen lassen;  Druck-, Vol.-und Beschleunigungsdaten aufnehmen
+- nach 2 Stunden um 1g erhöhen und Druck-, Vol.-und Beschleunigungsdaten aufnehmen
+- je nach Verschleißgrad Dustdosierung weiter erhöhen
+- Pumpe und System mit Filter reinigen und Pumpenkennlinie aufnehmen
+- abschließend Pumpe aufmachen und Welle, Spalttopf und Zahnräderverschleiß dokumentieren
+
+- Vermessene Pumpe nutzen bis Ausfall
+- Dauerläufe mit 30 minuten Campbell-Diagrammerstellung
+- niedrigere Dosierung von 0.25g nutzen
+- abschließend vermessen lassen
+
+- Zusätzlich analysieren wann es sich loihnen würde eine (vollständige) Pumpenkennlinie aufzunehmen
+","Erheblichen Verschleiß innerhalb kürzester Zeit (2h) feststellbar in den Campbell-Diagrammen als zusätzliche Ordnungsausprägung und Verstärkung der Beschleunigungen im Motorfrequenzbereich.
+
+Pumpe sollte noch bis Ausfall verschlissen werden und dann geöffnet werden zur Analyse wo der Verschleiß auftritt (Welle, Zahnräder...)
+
+Hatten wir eine vermessene Pumpe dafür genommen?"
+5,Spalttopf abfräsen und Deckel durch Plexiglasscheibe ersetzen,Einfluss Magnetkupplung,"- Bilden sich Luftblasen aus, haben wir Spiel zwischen Welle und Spalttopf wie bei der SDU4080?
+- welchen Einfluss hat das Spiel an der Welle auf die Beschleunigungsdaten?
+- Insbesondere bei niedrigen Drehfrequenzen und auch bei Lastwechseln",2023-11-01,2023-11-01,"- Test-Pumpe 2 nutzen; Deckel Spalttopf abfräsen 
+- neuen Deckel aus Plexiglas/Plastik fertigen und mit 2-komponenten-Kleber einkleben",Pumpe betreiben und Verhalten beobachten,Hat nicht funktioniert da Verbindung nicht Dicht genug.
+6,Zahneingriff verändern und Pumpenkennlinie aufzeichnen,Pumpenverständnis,Verändert sich die FFT in ihrer Amplitudenausbildung und im Campbell-Diagramm,,,- Pumpe aufschrauben und ein Zahnrad 3 Zähne weiter einsetzen,Bereits mit Campbell-Diagramm analysierte Pumpe betreiben und Verhalten beobachten. Wenn sich in den absolute Beschleunigungen Auffälligkeiten zeigen ein Campbell Diagramm mit 50er Abstufung vornehmen.,
+7,Anderes Fluid befördern,Pumpenverständnis,"- Verändert sich die FFT bei anderem Fluid. Bspw. Urea mit besseren/schlechteren Schmiereigenschaften
+- Könnte damit die Stoffunabhängigkeit realisiert werden? Übetragbarkeit der KI-Modelle auf der Grundlage eines Korrekturfaktors in Abhängigkeit der Beschleunigungen 
+- Einfluss des Fluids auf das Campbell Diagramme
+- Hat ein anderes Fluid Auswirkungen auf die Strömungen im Spalttopf?",,,"- Versuchsaufbau mit 3 anderen Fluiden betreiben
+- Methanol
+- hochviskose Stoffe (Silikonöle) ","- Thema Reinigung; für jedes Öl eigene Pumpe notwendig
+- Für jede Pumpe wird ein ""Vorher"" Campbell-Diagramm mit destilliertem Wasser aufgenommen und anschließend eins mit einem anderen Fluid",
+8,"Klemme, Gewichte o.ä. an Mono-Gestell",Pumpenverständnis,"Verändern sich die markanten Frequenzbänder bei 1.700 Hz und 2200 Hz wenn ein Gewicht am Monogestell befestigt wird? Sind diese Frequenzen auf die Vibrationen des Gestells zurückzuführen? Im Campbell Diagramm haben sich diese Bänder teilweise gezeigt, könnte also auch ein Pumpenspezifisches Problem sein durch Resonanzen oder EIgenfrequenzen ",,,"- Befestigung für ein Gewicht finden
+- Gewicht finden, dass sich am Monogestell befestigen lässt",- Vorher / Nachher Vergleich mit 50er Abstufung Campbell Diagramm,
+9,"Zähne anfeilen, oder anderweitig manipulieren und Welle manipulieren (konzentrisch)",Verschleißbetrachtung,"- Wie drückt sich Verschleiß an den Zähnen im Campbell-Diagramm aus? Wir dieser durch zusätzliche Ausprägungen ersichtlich?
+- zeigt sich die Manipulation an der Welle in den niedrigen Frequenzordnungen?
+- Eindeutig nachweisen, dass die Ausprägungen U_min / 60 die Wellenfrequenzen sind und (U_min / 60) * 11 der Zahneingriff
+- Welchen Einfluss hat deren Verschleiß auf das Campbell-Diagramm",,,"- Welle und Zahnräder manipulieren
+Sascha & Alex fragen wie Welle manipulieren","- Zähne einer neuen Pumpe manipulieren durch Anfeilen der Zahnnkopffläche (Einfluss Kopfleckstrom laut Sensitivitätsstudie am Größten) Vorher / Nachher Campbell-Diagramm mit 50er Abstufung
+- Welle einer anderen Pumpe manipulieren durch leichte Biegung, Vorher/ Nachher Campbell Diagramm erstellen",
+10,Langzeittest bei hoher Last und Lastwechseln,Verschleißbetrachtung,"- ab wann ist eine Pumpe eingefahren?
+- Gibt es die typischen Einfahr-, Talsohle-, Kurzvorausfall-Phasen
+- Wie und wo drückt sich der Verschleiß aus?
+- Korrelation zwischen Anzahl der Ordnungsausprägungen und Performanceeigenschaften bestätigen",2024-02-01,,"- SmartPump aufbau nutzen um Volumenstron- und Druckdaten genau tracken zu können
+- LabVIEW Programm anpassen um Pumpe automatisiert Lastwechseln im Dauerlauf anfahren lassen zu können","- Pumpe automatisiert im Dauerlauf betreiben mit einer Vielzahl an Lastwechsel (Hochlauf etc.)
+- in regelmäßigen Abständen Kennlinien für die Campbell-Diagramme anfahren in 50er Abstufung um den eintreten Verschleiß beobachten zu können
+- Aufnahem der Druck und Volumenstromdaten als Performanceindikatoren",- ohne Automatisierung mit gleichbleibender Last (4.000 U/min bei 8 bar) läuft die Pumpe mit destilliertem Wasser ohne Verschleißerscheinung trotz langem Betrieb --> Lastwechsel
+11,"Kleben der Magnetkupplung, Vorher/Nachher-Messung 50er-Abstufung Campbell Diagramm und Abgleich Beschleunigungs- mit Performancedaten der Pumpen",Einfluss Magnetkupplung,"- gibt es eine Korrelation zwischen den Beschleunigungsdaten und den Performanceeigenschaften der SmartPump-Daten?
+- welchen Einfluss hat das Kleben der Magnetkupplung auf die Performanceeigenschaften?
+- wie drücken sich die Einflüsse der Magnetkupplung in den Campbell-Diagrammen und in den triaxialen Beschleunigungsdaten aus?",2024-12-01,," Spalttopf mit einem 8mm Bohrer aufgebohrt 
+- der Rotor und Magnetkupplung mit Loctite Sekundenkleber verklebt.
+- dünnes Metallblech mit 2K Kleber auf die Oberseite geklebt, um die Bohrung wieder zu verschließen.","- Aufnahme der Pumpenkennlinie und Campbell-Diagramm vor dem Kleben in 50er Umdrehungsabstufungen ohne Gegendruck
+- Wiederholung dieser Messung nach dem Kleben der Magnetkupplung
+- Mindestens für 3 Pumpen durchführen um belastbare Ergebnisse über den EInfluss des Klebens zu erhalten","- Anschlagen der Zähne an die Gehäusewand wird reduziert
+- Performance nimmt leicht ab (Volumenstrom und Druck)
+- z-Achsen Spiel (vertikales Spiel Welle) wird erheblich reduziert
+- Zentrierung wird erheblich verbessert
+- größte Auwirkungen in z-x-Ebene (y ist Förderrichtung), z ist vertikales Spiel und x Anschlagen an das Gehäuse (?)
+- DIe Standardabweichung der Drehfrequenz und Druckdaten werden in den Bereichen unter 2000 U/min durch das Kleben erheblich optimiert. Deutlich bessere Ansteuerung der Pumpe zu vermuten
+- zusätzliche Tests mit min. 3 Pumpen zur Bestätigung inklusive Aufnahme der Pumpenkennlinie"
+12,BLDC Motor anschließen mit Kupplung ,Einfluss Magnetkupplung,"- welchen Einfluss hat das z-Achsen-Spiel; Erweiterung zu bisherigen Erkenntnissen aus den Campbell Diagrammen
+- Welchen Einfluss hat dies auf die Performancedaten (Reproduzierbarkeit)
+- Welche Unterschiede sind in der Kraftübertragung im Campbell-Diagramm in den niedrigen Frequenzbereichen und in der 3D Datenanalyse ersichtlich?",,,"- BLDC Motor anbringen und Ansteuerung klären
+- passende Kupplung finden und verbauen
+- Überprüfen ob Aufbau mit Mono-Gestell umsetzbar ist.","- Aufnahme Campbell-Diagramm vor Umbau aufnehmen und eine danach mit 50er Abstufung der Drehzahl
+- zusätzlich Aufnahme von Druck und Volumenstrom vorher / nachher",
+13,schauen ob Magnetfelder über Hall-Sensoren auslesbar sind ,Einfluss Magnetkupplung,"- Kann die Ansteuerung der Pumpe noch optimiert werden durch eine bessere Auslegung der Schwellwerte der Hall-Sensoren? 
+- Wie wirkt sich die Optimierung auf Campbell-Diagramme aus?
+- Ist ein Verbesserung in Kombination mit geklebter Magnetkupplung möglich?",,,"- Programmierer anfragen ob die absoluten Hall-Sensor-Werte auslesbar sind und ob diese einen hinterlegten Schwellwert haben
+- bestehende Pumpe nutzen mit geringem Verschleißgrad (nachgemessene Pumpen mit geklebter Magnetkupplung)","- FFT Analyse verschiedener Schwellwerte für die Hall-Sensoren
+- Falls FFTs Hinweis auf Optimierung liefern: Campbell Diagramm 50er Abstufung ohne Gegendruck mit alten Schwellwerten dann mit neuen",
+14,Messung mit der Pumpe ohne Lagerleckstrom,Pumpenverständnis," - Welchen Einfluss hat die Durchströmung durch den Spalttopf auf die Campbell-Diagramme/FFT?
+- Welche Auswirkungen hat das Fluid auf die Vibrationen (Geht mit Punkt 7 einher)
+- Welchen Effekt hat diese Strömung auf die Magnetkupplung / die Rotation der Welle? ",,,- Pumpe mit verklebten Kanälen nutzen (gibt es Daten vor dem Verkleben?),- Campbell Diagramm 50er Abstufung ohne Gegendruck,

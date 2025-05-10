@@ -1,0 +1,12 @@
+human_feedback_task:
+  description: >
+    Your task is to ask the user to rate the provided response in exactly this way: "Sind Sie mit der gegebenen Antwort zufrieden? Wenn ja dann freut es mich Ihnen geholfen zu haben. Wenn Nein, dann bitte geben Sie mir Feedback den Grund dafür.
+    Zum Beispiel: Fehlende Informationen, Falsche Informationen, unfreundliche Antwort, etc."
+    You have to provide all information to the next agent in this way:
+    'satisfaction': TRUE or FALSE
+    'feedback': The provided feedback by the user
+  expected_output: >
+    The feedback you get from the user and nothing else in JSON Format with 2 keys:
+    Bool value: 'hallucination_check_status': TRUE or FALSE
+    String value: 'reasoning': The provided feedback by the user
+  agent: human_feedback_agent

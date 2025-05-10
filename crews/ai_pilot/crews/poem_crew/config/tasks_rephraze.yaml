@@ -1,0 +1,16 @@
+rephraze_task:
+  description: >
+    Reformulate the user's question or task: {question_state}
+    into a clear and concise version ensuring it can be fully answered using the provided documents: {document_state}
+    It should correct in the response:
+    - user's missinputs in general
+    - false wording
+    - Information that could not be found in the document provided
+    Use the reasoning description: {hallucination_reasoning_state} to understand why the original previous question couldn't be answered properly to understand which part
+    of the user's question was problematic.
+    Answer always in german
+    Make sure that your new question is short, precise, and has a similar goal to the original question.
+    IMPORTANT: Make sure to provide only 1, precise question, which should be nearly as long as the original question.
+  expected_output: >
+    The rephrazed question
+  agent: rephraze_agent

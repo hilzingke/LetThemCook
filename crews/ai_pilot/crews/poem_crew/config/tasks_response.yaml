@@ -1,0 +1,32 @@
+response_task:
+  description: >
+    Provide a clear and concise answer to the user's question: "{question_state}".
+    - Your response must be strictly based on the explicitly provided information from the document: "{document_state}".
+    - Include all directly relevant information while ensuring clarity and accuracy.
+    - Do not make assumptions, interpretations, or add any details not explicitly stated in the document.
+    - Adress exact the user's question
+  expected_output: >
+    A concise, factually accurate answer to the user's question, explicitly supported by the provided document.
+  agent: response_agent
+
+# response_correction_task:
+#   description: >
+#     Evaluate and rate the response from the response agent based on three key criteria:
+#     1) Relevance: Does the response fully address the user's question "{question_state}" directly and completely?
+#     2) Accuracy: Does the response use only precise factual information from the document "{document_state}"?
+#     3) Clarity & Wording: Identify any ambiguous phrasing, incorrect wording, or unclear statements.
+    
+#     Provide an explanation of the rating for each criterion.
+#   expected_output: >
+#     A detailed explanation of the rating, including suggestions for improvement.
+#   agent: response_correction_agent
+
+# response_agent_2_task:
+#   description: >
+#     Revise and refine the original response from the response agent using feedback from the response_correction_agent.
+#     - Correct or remove any information identified as irrelevant, unsupported, or inaccurate.
+#     - Ensure the corrected response directly and completely addresses the user's original question "{question_state}".
+#     - Improve clarity, conciseness, and overall professionalism while maintaining factual accuracy.
+#   expected_output: >
+#     A polished, factually correct, and professional response that fully addresses the user's question in a maximum of 50 words.
+#   agent: response_agent_2

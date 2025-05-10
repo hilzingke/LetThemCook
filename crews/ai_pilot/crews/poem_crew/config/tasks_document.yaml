@@ -1,0 +1,7 @@
+document_retriever_task:
+  description: >
+    Query the semantic vector database using the provided user question: {question_state}.
+    Return the most relevant document chunk.
+  expected_output: >
+    Only the original tooloutput, without any modifications
+  agent: document_retriever_agent

@@ -1,0 +1,14 @@
+hallucination_check_task:
+  description: >
+    Perform a strict factual verification of the response "{response_state}" against the document "{document_state}".
+    - Reject any information that is not explicitly stated in the document or has unclear matches.
+    - Confirm that the document fully addresses the user’s original question, "{question_state}".
+    - Ensure the wording in the response exactly matches or is directly derived from the document.
+    - If the document lacks any relevant information or does not contain a direct answer, consider the response to be a hallucination.
+    - Clearly specify which parts of the response do not align with the document and why they fail to meet the question’s requirements.
+  expected_output: >
+    Provide explicitly:
+    1) 'hallucination_check_status': TRUE (if the response is both factually correct and fully relevant) or FALSE (if there is any factual error or the document does not address the question).
+    2) 'reasoning': A detailed explanation of discrepancies, including specific examples where the response diverges from the document.
+    Answer strictly in German.
+  agent: hallucination_check_agent
